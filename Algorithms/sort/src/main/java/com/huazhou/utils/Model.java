@@ -1,7 +1,9 @@
 package com.huazhou.utils;
 import com.huazhou.std.StdOut;
 
-
+/**
+ * ÅÅĞòËã·¨Ä£°å
+ */
 public class Model {
 	public void sort(Comparable[] a){
 		
