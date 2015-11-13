@@ -6,7 +6,7 @@ import com.huazhou.std.StdOut;
  */
 public class Model {
 	public void sort(Comparable[] a){
-
+		//排序算法的具体实现
 	}
 
 	protected boolean less(Comparable v, Comparable w){
@@ -19,16 +19,16 @@ public class Model {
 		a[j] = t;
 	}
 
+	//在单行中打印数组
 	public void show(Comparable[] a){
-		//在单行中打印数组
 		for (int i = 0; i < a.length; i++) {
 			StdOut.print(a[i] + " ");
 		}
 		StdOut.println();
 	}
 
+	//测试数组元素是否有序
 	public boolean isSorted(Comparable[] a){
-		//测试数组元素是否有序
 		for (int i = 0; i < a.length; i++) {
 			if(less(a[i], a[i-1])){
 				return false;
