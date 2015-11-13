@@ -9,10 +9,12 @@ public class Model {
 		//排序算法的具体实现
 	}
 
+	//对元素进行比较
 	protected boolean less(Comparable v, Comparable w){
 		return v.compareTo(w) < 0;
 	}
 
+	//将元素交换位置
 	protected void exch(Comparable[] a, int i, int j){
 		Comparable t = a[i];
 		a[i] = a[j];
