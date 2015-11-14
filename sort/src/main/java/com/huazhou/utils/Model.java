@@ -9,7 +9,7 @@ public class Model {
 		//排序算法的具体实现
 	}
 
-	//对元素进行比较
+	//对元素进行比较，如果v比w小则返回true
 	protected boolean less(Comparable v, Comparable w){
 		return v.compareTo(w) < 0;
 	}
