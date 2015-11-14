@@ -8,6 +8,7 @@ import com.huazhou.utils.Model;
 public class Insertion extends Model{
 	//将a[]按升序排列
 	public void sort(Comparable[] a){
+		System.out.println("Insertion");
 		int N = a.length;
 		//将a[i]插入到a[i-1]、a[i-2]、a[i-3]...之中
 		for (int i = 0; i < N; i++) {
