@@ -1,0 +1,19 @@
+import com.huazhou.utils.Model;
+
+/**
+ * 插入排序
+ * @author huazhou
+ *
+ */
+public class Insertion extends Model{
+	//将a[]按升序排列
+	public void sort(Comparable[] a){
+		int N = a.length;
+		//将a[i]插入到a[i-1]、a[i-2]、a[i-3]...之中
+		for (int i = 0; i < N; i++) {
+			for (int j = i; j > 0 && less(a[j], a[j-1]); j--) {
+				exch(a, j, j-1);
+			}
+		}
+	}
+}
