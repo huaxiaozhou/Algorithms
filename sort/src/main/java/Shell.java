@@ -1,7 +1,7 @@
 import com.huazhou.utils.Model;
 
 /**
- * 希尔排序
+ * 算法2.3 希尔排序
  * @author huazhou
  *
  */
