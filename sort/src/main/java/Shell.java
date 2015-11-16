@@ -8,10 +8,11 @@ import com.huazhou.utils.Model;
 public class Shell extends Model{
 
 	public void sort(Comparable[] a){
-		System.out.println("Shell");
+//		System.out.println("Shell");
 		//将a[]按升序排列
 		int N = a.length;
 		int h = 1;
+		//1,4,13,40,121,364,1093,...
 		while(h < N/3){
 			h = 3*h + 1;
 		}
