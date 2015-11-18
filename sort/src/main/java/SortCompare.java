@@ -13,6 +13,7 @@ public class SortCompare {
 		Selection selection = new Selection();
 		Insertion insertion = new Insertion();
 		Shell shell = new Shell();
+		Merge merge = new Merge();
 
 		Stopwatch timer = new Stopwatch();
 		if(alg.equals("Selection")){
@@ -23,6 +24,9 @@ public class SortCompare {
 		}
 		if(alg.equals("Shell")){
 			shell.sort(a);
+		}
+		if(alg.equals("Merge")){
+			merge.sort(a);
 		}
 		return timer.elapsedTime();
 	}

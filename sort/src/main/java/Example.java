@@ -6,7 +6,8 @@ public class Example {
     public static void main(String[] args){
 //		Model model = new Selection();
 //        Model model = new Insertion();
-        Model model = new Shell();
+//        Model model = new Shell();
+        Model model = new Merge();
 
         String[] a = In.readStrings();
         model.sort(a);
