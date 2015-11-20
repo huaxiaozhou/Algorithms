@@ -1,3 +1,4 @@
+import com.huazhou.MergeX;
 import com.huazhou.std.StdOut;
 import com.huazhou.std.StdRandom;
 import com.huazhou.utils.Model;
@@ -14,6 +15,7 @@ public class SortCompare {
 		Insertion insertion = new Insertion();
 		Shell shell = new Shell();
 		Merge merge = new Merge();
+		MergeX mergeX = new MergeX();
 
 		Stopwatch timer = new Stopwatch();
 		if(alg.equals("Selection")){
@@ -27,6 +29,9 @@ public class SortCompare {
 		}
 		if(alg.equals("Merge")){
 			merge.sort(a);
+		}
+		if(alg.equals("MergeX")){
+			mergeX.sort(a);
 		}
 		return timer.elapsedTime();
 	}

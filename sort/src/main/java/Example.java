@@ -1,3 +1,4 @@
+import com.huazhou.MergeX;
 import com.huazhou.std.In;
 import com.huazhou.utils.Model;
 
@@ -7,7 +8,8 @@ public class Example {
 //		Model model = new Selection();
 //        Model model = new Insertion();
 //        Model model = new Shell();
-        Model model = new Merge();
+//        Model model = new Merge();
+        Model model = new MergeX();
 
         String[] a = In.readStrings();
         model.sort(a);
