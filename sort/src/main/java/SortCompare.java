@@ -16,6 +16,7 @@ public class SortCompare {
 		Shell shell = new Shell();
 		Merge merge = new Merge();
 		MergeX mergeX = new MergeX();
+		Quick quick = new Quick();
 
 		Stopwatch timer = new Stopwatch();
 		if(alg.equals("Selection")){
@@ -32,6 +33,9 @@ public class SortCompare {
 		}
 		if(alg.equals("MergeX")){
 			mergeX.sort(a);
+		}
+		if(alg.equals("Quick")){
+			quick.sort(a);
 		}
 		return timer.elapsedTime();
 	}
