@@ -29,15 +29,11 @@ import com.huazhou.std.StdOut;
 
 
 public class MaxPQ<Key> implements Iterable<Key> {
-    private Key[] pq;                    // store items at indices 1 to N
-    private int N;                       // number of items on priority queue
+    private Key[] pq;                    //基于堆的完全二叉树
+    private int N;                       // 存储于pq[1..N]中，pq[0]没有使用
     private Comparator<Key> comparator;  // optional Comparator
 
-    /**
-     * Initializes an empty priority queue with the given initial capacity.
-     *
-     * @param  initCapacity the initial capacity of this priority queue
-     */
+
     public MaxPQ(int initCapacity) {
         pq = (Key[]) new Object[initCapacity + 1];
         N = 0;
@@ -50,24 +46,14 @@ public class MaxPQ<Key> implements Iterable<Key> {
         this(1);
     }
 
-    /**
-     * Initializes an empty priority queue with the given initial capacity,
-     * using the given comparator.
-     *
-     * @param  initCapacity the initial capacity of this priority queue
-     * @param  comparator the order in which to compare the keys
-     */
+
     public MaxPQ(int initCapacity, Comparator<Key> comparator) {
         this.comparator = comparator;
         pq = (Key[]) new Object[initCapacity + 1];
         N = 0;
     }
 
-    /**
-     * Initializes an empty priority queue using the given comparator.
-     *
-     * @param  comparator the order in which to compare the keys
-     */
+
     public MaxPQ(Comparator<Key> comparator) {
         this(1, comparator);
     }
@@ -139,10 +125,10 @@ public class MaxPQ<Key> implements Iterable<Key> {
      */
     public Key delMax() {
         if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
-        Key max = pq[1];
-        exch(1, N--);
-        sink(1);
-        pq[N+1] = null;     // to avoid loiterig and help with garbage collection
+        Key max = pq[1];//从根结点得到最大元素
+        exch(1, N--);   //将其和最后一个结点交换
+        sink(1);    //恢复堆的有序性
+        pq[N+1] = null;     //防止越界
         if ((N > 0) && (N == (pq.length - 1) / 4)) resize(pq.length / 2);
         assert isMaxHeap();
         return max;
