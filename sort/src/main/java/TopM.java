@@ -19,15 +19,14 @@ public class TopM {
 			pq.insert(new Transaction(StdIn.readLine()));
 			if(pq.size() > M){
 				pq.delMin();//如果优先队列中存在M+1个元素则删除其中最小的元素
-			}	//最大的M个元素都在优先队列中
-
-			Stack<Transaction> stack = new Stack<Transaction>();
-			while(!pq.isEmpty()){
-				stack.push(pq.delMin());
 			}
-			for (Transaction t : stack) {
-				StdOut.println(t);
-			}
+		}//最大的M个元素都在优先队列中
+		Stack<Transaction> stack = new Stack<Transaction>();
+		while(!pq.isEmpty()) {
+			stack.push(pq.delMin());
+		}
+		for (Transaction t : stack) {
+			StdOut.println(t);
 		}
 	}
 }
