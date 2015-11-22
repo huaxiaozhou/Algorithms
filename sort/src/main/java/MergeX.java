@@ -1,5 +1,3 @@
-package com.huazhou;
-
 import com.huazhou.utils.Model;
 
 /**
