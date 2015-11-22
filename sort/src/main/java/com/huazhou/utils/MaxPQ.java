@@ -16,7 +16,7 @@ package com.huazhou.utils;
  *
  *  Can be optimized by replacing full exchanges with half exchanges 
  *  (ala insertion sort).
- *
+ *  @author Robert Sedgewick
  ******************************************************************************/
 
 
@@ -27,28 +27,6 @@ import java.util.NoSuchElementException;
 import com.huazhou.std.StdIn;
 import com.huazhou.std.StdOut;
 
-/**
- *  The <tt>MaxPQ</tt> class represents a priority queue of generic keys.
- *  It supports the usual <em>insert</em> and <em>delete-the-maximum</em>
- *  operations, along with methods for peeking at the maximum key,
- *  testing if the priority queue is empty, and iterating through
- *  the keys.
- *  <p>
- *  This implementation uses a binary heap.
- *  The <em>insert</em> and <em>delete-the-maximum</em> operations take
- *  logarithmic amortized time.
- *  The <em>max</em>, <em>size</em>, and <em>is-empty</em> operations take constant time.
- *  Construction takes time proportional to the specified capacity or the number of
- *  items used to initialize the data structure.
- *  <p>
- *  For additional documentation, see <a href="http://algs4.cs.princeton.edu/24pq">Section 2.4</a> of
- *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
- *
- *  @author Robert Sedgewick
- *  @author Kevin Wayne
- *
- *  @param <Key> the generic type of key on this priority queue
- */
 
 public class MaxPQ<Key> implements Iterable<Key> {
     private Key[] pq;                    // store items at indices 1 to N
@@ -66,7 +44,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * Initializes an empty priority queue.
+     * 创建一个优先队列
      */
     public MaxPQ() {
         this(1);
@@ -95,10 +73,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * Initializes a priority queue from the array of keys.
-     * Takes time proportional to the number of keys, using sink-based heap construction.
-     *
-     * @param  keys the array of keys
+     * 用a[]中的元素创建一个优先队列
      */
     public MaxPQ(Key[] keys) {
         N = keys.length;
@@ -113,29 +88,21 @@ public class MaxPQ<Key> implements Iterable<Key> {
 
 
     /**
-     * Returns true if this priority queue is empty.
-     *
-     * @return <tt>true</tt> if this priority queue is empty;
-     *         <tt>false</tt> otherwise
+     * 返回队列是否为空
      */
     public boolean isEmpty() {
         return N == 0;
     }
 
     /**
-     * Returns the number of keys on this priority queue.
-     *
-     * @return the number of keys on this priority queue
+     * 返回优先队列中的元素个数
      */
     public int size() {
         return N;
     }
 
     /**
-     * Returns a largest key on this priority queue.
-     *
-     * @return a largest key on this priority queue
-     * @throws NoSuchElementException if this priority queue is empty
+     * 返回最大元素
      */
     public Key max() {
         if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
@@ -154,9 +121,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
 
 
     /**
-     * Adds a new key to this priority queue.
-     *
-     * @param  x the new key to add to this priority queue
+     * 向优先队列中插入一个元素
      */
     public void insert(Key x) {
 
@@ -170,10 +135,7 @@ public class MaxPQ<Key> implements Iterable<Key> {
     }
 
     /**
-     * Removes and returns a largest key on this priority queue.
-     *
-     * @return a largest key on this priority queue
-     * @throws NoSuchElementException if this priority queue is empty
+     * 删除并返回最大元素
      */
     public Key delMax() {
         if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
