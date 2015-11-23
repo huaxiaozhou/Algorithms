@@ -9,7 +9,8 @@ public class Example {
 //        Model model = new Shell();
 //        Model model = new Merge();
 //        Model model = new MergeX();
-        Model model = new Quick();
+//        Model model = new Quick();
+        Model model = new Heap();
 
         String[] a = In.readStrings();
         model.sort(a);
