@@ -7,6 +7,7 @@ import com.huazhou.utils.Model;
 public class Heap extends Model {
 
     public void sort(Comparable[] pq) {
+        System.out.println("Heap");
         int N = pq.length;
         for (int k = N/2; k >= 1; k--)
             sink(pq, k, N);
