@@ -60,10 +60,17 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
 
     //查找键，找到则更新值，否则创建新的元素
     public void put(Key key, Value val){
+        if(val == null){
+            delete(key);
+            return;
+        }
         int i = rank(key);
         if(i < N && keys[i].compareTo(key) == 0){
             vals[i] = val;
             return;
+        }
+        if(N == keys.length){
+            resize(2*keys.length);
         }
         for (int j = N; j > i; j--){
             keys[j] = keys[j-1];
@@ -138,8 +145,15 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         return get(key) != null;
     }
 
+    public Iterable<Key> keys() {
+        return keys(min(), max());
+    }
+
     public Iterable<Key> keys(Key lo, Key hi){
         Queue<Key> q = new Queue<Key>();
+        if(lo.compareTo(hi) > 0){
+            return q;
+        }
         for (int i = rank(lo); i < rank(hi); i++){
             q.enqueue(keys[i]);
         }

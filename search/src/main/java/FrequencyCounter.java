@@ -10,9 +10,12 @@ public class FrequencyCounter {
 	public static void main(String[] args) {
 		int minlen = Integer.parseInt(args[0]);	//最小键长
 //		ST<String, Integer> st = new ST<String, Integer>();
-		SequentialSearchST<String, Integer> st =
-				new SequentialSearchST<String, Integer>();
+//		SequentialSearchST<String, Integer> st =
+//				new SequentialSearchST<String, Integer>();
+		BinarySearchST<String, Integer> st = new BinarySearchST<String, Integer>();
+//		BST<String, Integer> st = new BST<String, Integer>();
 
+		long start = System.currentTimeMillis();
 		//构造符号表并统计频率
 		while(!StdIn.isEmpty()){
 			String word = StdIn.readString();
@@ -35,6 +38,8 @@ public class FrequencyCounter {
 				max = word;
 			}
 		}
+		long end = System.currentTimeMillis();
 		StdOut.println(max + " " + st.get(max));
+		StdOut.println("spend time:" + (end - start)/1000 + "s");
 	}
 }
