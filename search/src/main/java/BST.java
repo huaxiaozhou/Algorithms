@@ -142,8 +142,8 @@ public class BST<Key extends Comparable<Key>, Value> {
         return select(root, k).key;
     }
 
+    //返回排名为k的结点
     private Node select(Node x, int k){
-        //返回排名为k的结点
         if(x == null){
             return null;
         }
@@ -163,8 +163,8 @@ public class BST<Key extends Comparable<Key>, Value> {
         return rank(key, root);
     }
 
+    //返回以x为根结点的子树中小于x,key的键的数量
     private int rank(Key key, Node x){
-        //返回以x为根结点的子树中小于x,key的键的数量
         if(x == null){
             return 0;
         }
