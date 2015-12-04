@@ -1,3 +1,7 @@
+import com.huazhou.utils.Queue;
+
+import java.util.NoSuchElementException;
+
 /**
  * 算法3.4 红黑树
  * Created by huazhou on 2015/12/2.
@@ -102,5 +106,71 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         }
         h.N = size(h.left) + size(h.right) + 1;
         return h;
+    }
+
+    public boolean contains(Key key) {
+        return get(key) != null;
+    }
+
+    public Value get(Key key) {
+        return get(root, key);
+    }
+
+    private Value get(Node x, Key key) {
+        while (x != null) {
+            int cmp = key.compareTo(x.key);
+            if      (cmp < 0) x = x.left;
+            else if (cmp > 0) x = x.right;
+            else              return x.val;
+        }
+        return null;
+    }
+
+    public Iterable<Key> keys() {
+        if (isEmpty()) return new Queue<Key>();
+        return keys(min(), max());
+    }
+
+    public Iterable<Key> keys(Key lo, Key hi) {
+        if (lo == null) throw new NullPointerException("first argument to keys() is null");
+        if (hi == null) throw new NullPointerException("second argument to keys() is null");
+
+        Queue<Key> queue = new Queue<Key>();
+        // if (isEmpty() || lo.compareTo(hi) > 0) return queue;
+        keys(root, queue, lo, hi);
+        return queue;
+    }
+
+    private void keys(Node x, Queue<Key> queue, Key lo, Key hi) {
+        if (x == null) return;
+        int cmplo = lo.compareTo(x.key);
+        int cmphi = hi.compareTo(x.key);
+        if (cmplo < 0) keys(x.left, queue, lo, hi);
+        if (cmplo <= 0 && cmphi >= 0) queue.enqueue(x.key);
+        if (cmphi > 0) keys(x.right, queue, lo, hi);
+    }
+
+    public boolean isEmpty() {
+        return root == null;
+    }
+
+    public Key min() {
+        return min(root).key;
+    }
+
+    private Node min(Node x) {
+        // assert x != null;
+        if (x.left == null) return x;
+        else                return min(x.left);
+    }
+
+    public Key max() {
+        return max(root).key;
+    }
+
+    private Node max(Node x) {
+        // assert x != null;
+        if (x.right == null) return x;
+        else                 return max(x.right);
     }
 }
