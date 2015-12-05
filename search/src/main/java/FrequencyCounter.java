@@ -15,8 +15,10 @@ public class FrequencyCounter {
 //		BinarySearchST<String, Integer> st = new BinarySearchST<String, Integer>();
 //		BST<String, Integer> st = new BST<String, Integer>();
 //		RedBlackBST<String, Integer> st = new RedBlackBST<String, Integer>();
-		SeparateChainingHashST<String, Integer> st =
-				new SeparateChainingHashST<String, Integer>();
+//		SeparateChainingHashST<String, Integer> st =
+//				new SeparateChainingHashST<String, Integer>();
+		LinearProbingHashST<String, Integer> st =
+				new LinearProbingHashST<String, Integer>();
 
 		long start = System.currentTimeMillis();
 		//构造符号表并统计频率
