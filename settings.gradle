@@ -1,1 +1,1 @@
-include ':app', ':sort', ':search'
+include ':app', ':sort', ':search', ':graphs'
