@@ -3,13 +3,13 @@ import com.huazhou.utils.Stack;
 
 
 /**
- * Ëã·¨4.2 Ê¹ÓÃ¹ã¶ÈÓÅÏÈËÑË÷²éÕÒÍ¼ÖĞµÄÂ·¾¶
+ * ç®—æ³•4.2 ä½¿ç”¨å¹¿åº¦ä¼˜å…ˆæœç´¢æŸ¥æ‰¾å›¾ä¸­çš„è·¯å¾„
  * Created by huazhou on 2015/12/9.
  */
 public class BreadthFirstPaths {
-    private boolean[] marked;   //µ½´ï¸Ã¶¥µãµÄ×î¶ÌÂ·¾¶ÒÑÖªÂğ£¿
-    private int[] edgeTo;   //µ½´ï¸Ã¶¥µãµÄÒÑÖªÂ·¾¶ÉÏµÄ×îºóÒ»¸ö¶¥µã
-    private int s;  //Æğµã
+    private boolean[] marked;   //åˆ°è¾¾è¯¥é¡¶ç‚¹çš„æœ€çŸ­è·¯å¾„å·²çŸ¥å—ï¼Ÿ
+    private int[] edgeTo;   //åˆ°è¾¾è¯¥é¡¶ç‚¹çš„å·²çŸ¥è·¯å¾„ä¸Šçš„æœ€åä¸€ä¸ªé¡¶ç‚¹
+    private int s;  //èµ·ç‚¹
 
     public BreadthFirstPaths(Graph G, int s){
         marked = new boolean[G.V()];
@@ -20,16 +20,16 @@ public class BreadthFirstPaths {
 
     private void bfs(Graph G, int s){
         Queue<Integer> queue = new Queue<Integer>();
-        marked[s] = true;   //±ê¼ÇÆğµã
-        queue.enqueue(s);   //½«Ëü¼ÓÈë¶ÓÁĞ
+        marked[s] = true;   //æ ‡è®°èµ·ç‚¹
+        queue.enqueue(s);   //å°†å®ƒåŠ å…¥é˜Ÿåˆ—
         while(!queue.isEmpty()){
-            int v = queue.dequeue();    //´Ó¶ÓÁĞÖĞÉ¾È¥ÏÂÒ»¶¥µã
+            int v = queue.dequeue();    //ä»é˜Ÿåˆ—ä¸­åˆ å»ä¸‹ä¸€é¡¶ç‚¹
             for (int w : G.adj(v)){
-                //¶ÔÓÚÃ¿¸öÎ´±»±ê¼ÇµÄÏàÁÚ¶¥µã
+                //å¯¹äºæ¯ä¸ªæœªè¢«æ ‡è®°çš„ç›¸é‚»é¡¶ç‚¹
                 if(!marked[w]){
-                    edgeTo[w] = v;  //±£³Ö×î¶ÌÂ·¾¶µÄ×îºóÒ»Ìõ±ß
-                    marked[w] = true;   //±ê¼ÇËü£¬ÒòÎª×î¶ÌÂ·¾¶ÒÑÖª
-                    queue.enqueue(w);   //²¢½«ËüÌí¼Óµ½¶ÓÁĞÖĞ
+                    edgeTo[w] = v;  //ä¿æŒæœ€çŸ­è·¯å¾„çš„æœ€åä¸€æ¡è¾¹
+                    marked[w] = true;   //æ ‡è®°å®ƒï¼Œå› ä¸ºæœ€çŸ­è·¯å¾„å·²çŸ¥
+                    queue.enqueue(w);   //å¹¶å°†å®ƒæ·»åŠ åˆ°é˜Ÿåˆ—ä¸­
                 }
             }
         }
