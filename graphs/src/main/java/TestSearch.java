@@ -10,13 +10,13 @@ public class TestSearch {
         int s = Integer.parseInt(args[1]);
 //        DepthFirstSearch search = new DepthFirstSearch(G, s);
 //        Paths search = new Paths(G, s);
-//        DepthFirstSearch search = new DepthFirstSearch(G,s);
-        BreadthFirstPaths search = new BreadthFirstPaths(G,s);
+        DepthFirstSearch search = new DepthFirstSearch(G,s);
+//        BreadthFirstPaths search = new BreadthFirstPaths(G,s);
 //        testConnected(search, G);
         findAllPaths(search, G, s);
     }
 
-    private static void findAllPaths(BreadthFirstPaths search, Graph G, int s){
+    private static void findAllPaths(DepthFirstSearch search, Graph G, int s){
         for(int v = 0; v < G.V(); v++){
             StdOut.print(s + " to " + v + ": ");
             if(search.hasPathTo(v)){
