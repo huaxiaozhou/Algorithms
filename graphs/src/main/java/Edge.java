@@ -1,11 +1,11 @@
-/**
- * ´øÈ¨ÖØµÄ±ßµÄÊı¾İÀàĞÍ
+ï»¿/**
+ * å¸¦æƒé‡çš„è¾¹çš„æ•°æ®ç±»å‹
  * Created by huazhou on 2015/12/17.
  */
 public class Edge implements Comparable<Edge>{
-    private int v;  //¶¥µãÖ®Ò»
-    private int w;  //ÁíÒ»¸ö¶¥µã
-    private double weight;  //±ßµÄÈ¨ÖØ
+    private int v;  //é¡¶ç‚¹ä¹‹ä¸€
+    private int w;  //å¦ä¸€ä¸ªé¡¶ç‚¹
+    private double weight;  //è¾¹çš„æƒé‡
 
     public Edge(int v, int w, double weight) {
         this.v = v;
@@ -21,7 +21,7 @@ public class Edge implements Comparable<Edge>{
         return v;
     }
 
-    //ÒÑÖªÒ»¸ö¶¥µãvÊ±£¬¿ÉÒÔµÃµ½±ßµÄÁíÒ»¸ö¶¥µã
+    //å·²çŸ¥ä¸€ä¸ªé¡¶ç‚¹væ—¶ï¼Œå¯ä»¥å¾—åˆ°è¾¹çš„å¦ä¸€ä¸ªé¡¶ç‚¹
     public int other(int vertex) {
         if (vertex == v) {
             return w;

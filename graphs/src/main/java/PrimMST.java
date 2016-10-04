@@ -1,15 +1,15 @@
-import com.huazhou.utils.IndexMinPQ;
+ï»¿import com.huazhou.utils.IndexMinPQ;
 import com.huazhou.utils.Queue;
 
 /**
- * ×îĞ¡Éú³ÉÊ÷µÄPrimËã·¨£¨¼´Ê±°æ±¾£©
+ * æœ€å°ç”Ÿæˆæ ‘çš„Primç®—æ³•ï¼ˆå³æ—¶ç‰ˆæœ¬ï¼‰
  * Created by huazhou on 2015/12/19.
  */
 public class PrimMST {
-    private Edge[] edgeTo;  //¾àÀëÊ÷×î½üµÄ±ß
+    private Edge[] edgeTo;  //è·ç¦»æ ‘æœ€è¿‘çš„è¾¹
     private double[] distTo;  //distTo[w]=edgeTo[w].weight()
-    private boolean[] marked;  //Èç¹ûvÔÚÊ÷ÖĞÔòÎªtrue
-    private IndexMinPQ<Double> pq;  //ÓĞĞ§µÄºáÇĞ±ß
+    private boolean[] marked;  //å¦‚æœvåœ¨æ ‘ä¸­åˆ™ä¸ºtrue
+    private IndexMinPQ<Double> pq;  //æœ‰æ•ˆçš„æ¨ªåˆ‡è¾¹
 
     public PrimMST(EdgeWeightedGraph G) {
         edgeTo = new Edge[G.V()];
@@ -20,22 +20,22 @@ public class PrimMST {
             distTo[v] = Double.POSITIVE_INFINITY;
         }
         distTo[0] = 0.0;
-        pq.insert(0, 0.0);//ÓÃ¶¥µã0ºÍÈ¨ÖØ0³õÊ¼»¯pq
+        pq.insert(0, 0.0);//ç”¨é¡¶ç‚¹0å’Œæƒé‡0åˆå§‹åŒ–pq
         while (!pq.isEmpty()) {
             int v = pq.delMin();
-            visit(G, v);    //½«×î½üµÄ¶¥µãÌí¼Óµ½Ê÷ÖĞ
+            visit(G, v);    //å°†æœ€è¿‘çš„é¡¶ç‚¹æ·»åŠ åˆ°æ ‘ä¸­
         }
     }
 
-    //½«¶¥µãvÌí¼Óµ½Ê÷ÖĞ£¬¸üĞÂÊı¾İ
+    //å°†é¡¶ç‚¹væ·»åŠ åˆ°æ ‘ä¸­ï¼Œæ›´æ–°æ•°æ®
     private void visit(EdgeWeightedGraph G, int v) {
         marked[v] = true;
         for (Edge e : G.adj(v)) {
             int w = e.other(v);
             if (marked[w]) {
-                continue;    //v-wÊ§Ğ§
+                continue;    //v-wå¤±æ•ˆ
             }
-            //Á¬½ÓwºÍÊ÷µÄ×î¼Ñ±ßEdge±äÎªe
+            //è¿æ¥wå’Œæ ‘çš„æœ€ä½³è¾¹Edgeå˜ä¸ºe
             if (e.weight() < distTo[w]) {
                 distTo[w] = e.weight();
                 edgeTo[w] = e;

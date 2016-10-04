@@ -1,18 +1,18 @@
-import com.huazhou.std.In;
+ï»¿import com.huazhou.std.In;
 import com.huazhou.utils.Bag;
 
 /**
- * ¼ÓÈ¨ÎŞÏòÍ¼µÄÊı¾İÀàĞÍ
+ * åŠ æƒæ— å‘å›¾çš„æ•°æ®ç±»å‹
  * Created by huazhou on 2015/12/17.
  */
 public class EdgeWeightedGraph {
     private static final String NEWLINE = System.getProperty("line.separator");
 
-    private int V;  //¶¥µã×ÜÊı
-    private int E;  //±ßµÄ×ÜÊı
-    private Bag<Edge>[] adj;    //ÁÚ½Ó±í
+    private int V;  //é¡¶ç‚¹æ€»æ•°
+    private int E;  //è¾¹çš„æ€»æ•°
+    private Bag<Edge>[] adj;    //é‚»æ¥è¡¨
 
-    //´´½¨Ò»·ùº¬ÓĞV¸ö¶¥µãµÄ¿ÕÍ¼
+    //åˆ›å»ºä¸€å¹…å«æœ‰Vä¸ªé¡¶ç‚¹çš„ç©ºå›¾
     public EdgeWeightedGraph(int V) {
         this.V = V;
         this.E = 0;
@@ -34,17 +34,17 @@ public class EdgeWeightedGraph {
         }
     }
 
-    //Í¼µÄ¶¥µãÊı
+    //å›¾çš„é¡¶ç‚¹æ•°
     public int V() {
         return V;
     }
 
-    //Í¼µÄ±ßÊı
+    //å›¾çš„è¾¹æ•°
     public int E() {
         return E;
     }
 
-    //ÏòÍ¼ÖĞÌí¼ÓÒ»Ìõ±ße
+    //å‘å›¾ä¸­æ·»åŠ ä¸€æ¡è¾¹e
     public void addEdge(Edge e) {
         int v = e.either();
         int w = e.other(v);
@@ -53,12 +53,12 @@ public class EdgeWeightedGraph {
         E++;
     }
 
-    //ºÍvÏà¹ØÁªµÄËùÓĞ±ß
+    //å’Œvç›¸å…³è”çš„æ‰€æœ‰è¾¹
     public Iterable<Edge> adj(int v) {
         return adj[v];
     }
 
-    //Í¼µÄËùÓĞ±ß
+    //å›¾çš„æ‰€æœ‰è¾¹
     public Iterable<Edge> edges() {
         Bag<Edge> b = new Bag<Edge>();
         for (int v = 0; v < V; v++) {

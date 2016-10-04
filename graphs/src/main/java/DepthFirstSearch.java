@@ -1,14 +1,14 @@
-import com.huazhou.utils.Stack;
+ï»¿import com.huazhou.utils.Stack;
 
 /**
- * Ëã·¨4.1 Éî¶ÈÓÅÏÈËÑË÷
+ * ç®—æ³•4.1 æ·±åº¦ä¼˜å…ˆæœç´¢
  * Created by huazhou on 2015/12/8.
  */
 public class DepthFirstSearch {
-    private boolean[] marked;   //Õâ¸ö¶¥µãÉÏµ÷ÓÃ¹ıdfs()ÁËÂğ£¿
+    private boolean[] marked;   //è¿™ä¸ªé¡¶ç‚¹ä¸Šè°ƒç”¨è¿‡dfs()äº†å—ï¼Ÿ
     private int count;
-    private int[] edgeTo;   //´ÓÆğµãµ½Ò»¸ö¶¥µãµÄÒÑÖªÂ·¾¶ÉÏµÄ×îºóÒ»¸ö¶¥µã
-    private int s;    //Æğµã
+    private int[] edgeTo;   //ä»èµ·ç‚¹åˆ°ä¸€ä¸ªé¡¶ç‚¹çš„å·²çŸ¥è·¯å¾„ä¸Šçš„æœ€åä¸€ä¸ªé¡¶ç‚¹
+    private int s;    //èµ·ç‚¹
 
     public DepthFirstSearch(Graph G, int s){
         marked = new boolean[G.V()];

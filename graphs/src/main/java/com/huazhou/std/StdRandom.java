@@ -1,4 +1,4 @@
-package com.huazhou.std;
+﻿package com.huazhou.std;
 
 /******************************************************************************
  *  Compilation:  javac StdRandom.java

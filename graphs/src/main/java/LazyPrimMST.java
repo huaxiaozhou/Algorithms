@@ -1,29 +1,29 @@
-import com.huazhou.utils.MinPQ;
+ï»¿import com.huazhou.utils.MinPQ;
 import com.huazhou.utils.Queue;
 
 /**
- * ×îĞ¡Éú³ÉÊ÷µÄPrimËã·¨µÄÑÓÊ±ÊµÏÖ
+ * æœ€å°ç”Ÿæˆæ ‘çš„Primç®—æ³•çš„å»¶æ—¶å®ç°
  * Created by huazhou on 2015/12/18.
  */
 public class LazyPrimMST {
-    private Queue<Edge> mst;     //×îĞ¡Éú³ÉÊ÷µÄ±ß
-    private boolean[] marked;    //×îĞ¡Éú³ÉÊ÷µÄ¶¥µã
-    private MinPQ<Edge> pq;     //ºáÇĞ±ß£¨°üÀ¨Ê§Ğ§µÄ±ß£©
+    private Queue<Edge> mst;     //æœ€å°ç”Ÿæˆæ ‘çš„è¾¹
+    private boolean[] marked;    //æœ€å°ç”Ÿæˆæ ‘çš„é¡¶ç‚¹
+    private MinPQ<Edge> pq;     //æ¨ªåˆ‡è¾¹ï¼ˆåŒ…æ‹¬å¤±æ•ˆçš„è¾¹ï¼‰
 
     public LazyPrimMST(EdgeWeightedGraph G) {
         mst = new Queue<Edge>();
         pq = new MinPQ<Edge>();
         marked = new boolean[G.V()];
 
-        visit(G, 0);    //¼ÙÉèGÊÇÁ¬Í¨µÄ
+        visit(G, 0);    //å‡è®¾Gæ˜¯è¿é€šçš„
         while (!pq.isEmpty()) {
-            Edge e = pq.delMin();          //´ÓpqÖĞµÃµ½È¨ÖØ×îĞ¡µÄ±ß
-            int v = e.either(), w = e.other(v);  //Ìø¹ıÊ§Ğ§µÄ±ß
+            Edge e = pq.delMin();          //ä»pqä¸­å¾—åˆ°æƒé‡æœ€å°çš„è¾¹
+            int v = e.either(), w = e.other(v);  //è·³è¿‡å¤±æ•ˆçš„è¾¹
             if (marked[v] && marked[w]) {
                 continue;
             }
-            mst.enqueue(e);            //½«±ßÌí¼Óµ½Ê÷ÖĞ
-            if (!marked[v]) {   //½«¶¥µã£¨v»òw£©Ìí¼Óµ½Ê÷ÖĞ
+            mst.enqueue(e);            //å°†è¾¹æ·»åŠ åˆ°æ ‘ä¸­
+            if (!marked[v]) {   //å°†é¡¶ç‚¹ï¼ˆvæˆ–wï¼‰æ·»åŠ åˆ°æ ‘ä¸­
                 visit(G, v);
             }
             if (!marked[w]) {
@@ -32,7 +32,7 @@ public class LazyPrimMST {
         }
     }
 
-    //±ê¼Ç¶¥µãv²¢½«ËùÓĞÁ¬½ÓvºÍÎ´±»±ê¼Ç¶¥µãµÄ±ß¼ÓÈëpq
+    //æ ‡è®°é¡¶ç‚¹vå¹¶å°†æ‰€æœ‰è¿æ¥vå’Œæœªè¢«æ ‡è®°é¡¶ç‚¹çš„è¾¹åŠ å…¥pq
     private void visit(EdgeWeightedGraph G, int v) {
         marked[v] = true;
         for (Edge e : G.adj(v)) {

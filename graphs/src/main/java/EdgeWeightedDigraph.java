@@ -1,16 +1,16 @@
-import com.huazhou.std.In;
+ï»¿import com.huazhou.std.In;
 import com.huazhou.utils.Bag;
 
 /**
- * ¼ÓÈ¨ÓĞÏòÍ¼µÄÊı¾İÀàĞÍ
+ * åŠ æƒæœ‰å‘å›¾çš„æ•°æ®ç±»å‹
  * Created by huazhou on 2015/12/20.
  */
 public class EdgeWeightedDigraph {
-    private int V;              //¶¥µã×ÜÊı
-    private int E;              //±ßµÄ×ÜÊı
-    private Bag<DirectedEdge>[] adj;    //ÁÚ½Ó±í
+    private int V;              //é¡¶ç‚¹æ€»æ•°
+    private int E;              //è¾¹çš„æ€»æ•°
+    private Bag<DirectedEdge>[] adj;    //é‚»æ¥è¡¨
 
-    //º¬ÓĞV¸ö¶¥µãµÄ¿ÕÓĞÏòÍ¼
+    //å«æœ‰Vä¸ªé¡¶ç‚¹çš„ç©ºæœ‰å‘å›¾
     public EdgeWeightedDigraph(int V) {
         this.V = V;
         this.E = 0;
@@ -31,29 +31,29 @@ public class EdgeWeightedDigraph {
         }
     }
 
-    //¶¥µã×ÜÊı
+    //é¡¶ç‚¹æ€»æ•°
     public int V() {
         return V;
     }
 
-    //±ßµÄ×ÜÊı
+    //è¾¹çš„æ€»æ•°
     public int E() {
         return E;
     }
 
-    //½«eÌí¼Óµ½¸ÃÓĞÏòÍ¼ÖĞ
+    //å°†eæ·»åŠ åˆ°è¯¥æœ‰å‘å›¾ä¸­
     public void addEdge(DirectedEdge e) {
         int v = e.from();
         adj[v].add(e);
         E++;
     }
 
-    //´ÓvÖ¸³öµÄ±ß
+    //ä»væŒ‡å‡ºçš„è¾¹
     public Iterable<DirectedEdge> adj(int v) {
         return adj[v];
     }
 
-    //¸ÃÓĞÏòÍ¼ÖĞµÄËùÓĞ±ß
+    //è¯¥æœ‰å‘å›¾ä¸­çš„æ‰€æœ‰è¾¹
     public Iterable<DirectedEdge> edges() {
         Bag<DirectedEdge> list = new Bag<DirectedEdge>();
         for (int v = 0; v < V; v++) {

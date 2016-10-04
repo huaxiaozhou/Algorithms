@@ -1,14 +1,14 @@
-import com.huazhou.utils.Stack;
+ï»¿import com.huazhou.utils.Stack;
 
 /**
- * Ñ°ÕÒÓĞÏò»·
+ * å¯»æ‰¾æœ‰å‘ç¯
  * Created by huazhou on 2015/12/14.
  */
 public class DirectedCycle {
     private boolean[] marked;
     private int[] edgeTo;
-    private boolean[] onStack;//µİ¹éµ÷ÓÃµÄÕ»ÉÏµÄËùÓĞ¶¥µã
-    private Stack<Integer> cycle;//ÓĞÏò»·ÖĞµÄËùÓĞ¶¥µã£¨Èç¹û´æÔÚ£©
+    private boolean[] onStack;//é€’å½’è°ƒç”¨çš„æ ˆä¸Šçš„æ‰€æœ‰é¡¶ç‚¹
+    private Stack<Integer> cycle;//æœ‰å‘ç¯ä¸­çš„æ‰€æœ‰é¡¶ç‚¹ï¼ˆå¦‚æœå­˜åœ¨ï¼‰
 
     public DirectedCycle(Digraph G) {
         marked  = new boolean[G.V()];

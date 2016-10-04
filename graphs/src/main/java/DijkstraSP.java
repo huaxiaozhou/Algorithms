@@ -1,14 +1,14 @@
-import com.huazhou.utils.IndexMinPQ;
+ï»¿import com.huazhou.utils.IndexMinPQ;
 import com.huazhou.utils.Stack;
 
 /**
- * Ëã·¨4.9 ×î¶ÌÂ·¾¶µÄDijkstraËã·¨
+ * ç®—æ³•4.9 æœ€çŸ­è·¯å¾„çš„Dijkstraç®—æ³•
  * Created by huazhou on 2015/12/20.
  */
 public class DijkstraSP {
-    //´ÓÆğµãsµ½vµÄÒÑÖª×î¶ÌÂ·¾¶µÄ³¤¶È
+    //ä»èµ·ç‚¹såˆ°vçš„å·²çŸ¥æœ€çŸ­è·¯å¾„çš„é•¿åº¦
     private double[] distTo;
-    //´ÓÆğµãsµ½vµÄ×î¶ÌÂ·¾¶ÉÏµÄ×îºóÒ»Ìõ±ß
+    //ä»èµ·ç‚¹såˆ°vçš„æœ€çŸ­è·¯å¾„ä¸Šçš„æœ€åä¸€æ¡è¾¹
     private DirectedEdge[] edgeTo;
     private IndexMinPQ<Double> pq;
 
@@ -18,7 +18,7 @@ public class DijkstraSP {
         pq = new IndexMinPQ<Double>(G.V());
 
         for (int v = 0; v < G.V(); v++) {
-            //³õÊ¼»¯ÎªÕıÎŞÇî´ó
+            //åˆå§‹åŒ–ä¸ºæ­£æ— ç©·å¤§
             distTo[v] = Double.POSITIVE_INFINITY;
         }
         distTo[s] = 0.0;
@@ -29,7 +29,7 @@ public class DijkstraSP {
         }
     }
 
-    //¶¥µãµÄËÉ³Ú
+    //é¡¶ç‚¹çš„æ¾å¼›
     private void relax(EdgeWeightedDigraph G, int v) {
         for (DirectedEdge e : G.adj(v)) {
             int w = e.to();
@@ -46,7 +46,7 @@ public class DijkstraSP {
         }
     }
 
-    //±ßµÄËÉ³Ú
+    //è¾¹çš„æ¾å¼›
     private void relax(DirectedEdge e){
         int v = e.from(), w = e.to();
         if (distTo[w] > distTo[v] + e.weight()) {
@@ -55,7 +55,7 @@ public class DijkstraSP {
         }
     }
 
-    //×î¶ÌÂ·¾¶Ê÷ÊµÏÖÖĞµÄ±ê×¼²éÑ¯Ëã·¨
+    //æœ€çŸ­è·¯å¾„æ ‘å®ç°ä¸­çš„æ ‡å‡†æŸ¥è¯¢ç®—æ³•
     public double distTo(int v) {
         return distTo[v];
     }

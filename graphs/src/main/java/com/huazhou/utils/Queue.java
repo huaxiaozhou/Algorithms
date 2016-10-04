@@ -1,4 +1,4 @@
-package com.huazhou.utils;
+﻿package com.huazhou.utils;
 
 /**
  * Created by huazhou on 2015/11/29.

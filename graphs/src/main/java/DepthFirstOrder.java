@@ -1,15 +1,15 @@
-import com.huazhou.utils.Queue;
+ï»¿import com.huazhou.utils.Queue;
 import com.huazhou.utils.Stack;
 
 /**
- * ÓĞÏòÍ¼ÖĞ»ùÓÚÉî¶ÈÓÅÏÈËÑË÷µÄ¶¥µãÅÅĞò
+ * æœ‰å‘å›¾ä¸­åŸºäºæ·±åº¦ä¼˜å…ˆæœç´¢çš„é¡¶ç‚¹æ’åº
  * Created by huazhou on 2015/12/14.
  */
 public class DepthFirstOrder {
     private boolean[] marked;
-    private Queue<Integer> preorder;   //ËùÓĞ¶¥µãµÄÇ°ĞòÅÅÁĞ
-    private Queue<Integer> postorder;  //ËùÓĞ¶¥µãµÄºóĞòÅÅÁĞ
-    private Stack<Integer> reversePost;//ËùÓĞ¶¥µãµÄÄæºóĞòÅÅÁĞ
+    private Queue<Integer> preorder;   //æ‰€æœ‰é¡¶ç‚¹çš„å‰åºæ’åˆ—
+    private Queue<Integer> postorder;  //æ‰€æœ‰é¡¶ç‚¹çš„ååºæ’åˆ—
+    private Stack<Integer> reversePost;//æ‰€æœ‰é¡¶ç‚¹çš„é€†ååºæ’åˆ—
     private int[] pre;
     private int[] post;
     private int preCounter;

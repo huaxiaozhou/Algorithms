@@ -1,4 +1,4 @@
-package com.huazhou.utils;
+﻿package com.huazhou.utils;
 
 /******************************************************************************
  *  Compilation:  javac ST.java

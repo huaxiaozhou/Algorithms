@@ -1,5 +1,5 @@
-/**
- * ÈÎÒâ¶¥µã¶ÔÖ®¼äµÄ×î¶ÌÂ·¾¶
+ï»¿/**
+ * ä»»æ„é¡¶ç‚¹å¯¹ä¹‹é—´çš„æœ€çŸ­è·¯å¾„
  * Created by huazhou on 2015/12/20.
  */
 public class DijkstraAllPairsSP {

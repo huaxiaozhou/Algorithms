@@ -1,7 +1,7 @@
-import com.huazhou.utils.Stack;
+ï»¿import com.huazhou.utils.Stack;
 
 /**
- * Ëã·¨4.10 ÎŞ»·¼ÓÈ¨ÓĞÏòÍ¼µÄ×î¶ÌÂ·¾¶Ëã·¨
+ * ç®—æ³•4.10 æ— ç¯åŠ æƒæœ‰å‘å›¾çš„æœ€çŸ­è·¯å¾„ç®—æ³•
  * Created by huazhou on 2015/12/20.
  */
 public class AcyclicSP {
@@ -23,7 +23,7 @@ public class AcyclicSP {
         }
     }
 
-    //¶¥µãµÄËÉ³Ú
+    //é¡¶ç‚¹çš„æ¾å¼›
     private void relax(EdgeWeightedDigraph G, int v) {
         for (DirectedEdge e : G.adj(v)) {
             int w = e.to();

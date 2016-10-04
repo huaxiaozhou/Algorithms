@@ -1,11 +1,11 @@
-import com.huazhou.std.StdOut;
+ï»¿import com.huazhou.std.StdOut;
 
 /**
- * Ëã·¨4.5 ÍØÆËÅÅĞò
+ * ç®—æ³•4.5 æ‹“æ‰‘æ’åº
  * Created by huazhou on 2015/12/14.
  */
 public class Topological {
-    private Iterable<Integer> order;//¶¥µãµÄÍØÆËÅÅĞò
+    private Iterable<Integer> order;//é¡¶ç‚¹çš„æ‹“æ‰‘æ’åº
 
     public Topological(Digraph G) {
         DirectedCycle finder = new DirectedCycle(G);

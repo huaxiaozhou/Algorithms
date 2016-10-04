@@ -1,11 +1,11 @@
-/**
- * ¼ÓÈ¨ÓĞÏò±ßµÄÊı¾İÀàĞÍ
+ï»¿/**
+ * åŠ æƒæœ‰å‘è¾¹çš„æ•°æ®ç±»å‹
  * Created by huazhou on 2015/12/20.
  */
 public class DirectedEdge {
-    private int v;          //±ßµÄÆğµã
-    private int w;          //±ßµÄÖÕµã
-    private double weight;  //±ßµÄÈ¨ÖØ
+    private int v;          //è¾¹çš„èµ·ç‚¹
+    private int w;          //è¾¹çš„ç»ˆç‚¹
+    private double weight;  //è¾¹çš„æƒé‡
 
     public DirectedEdge(int v, int w, double weight) {
         this.v = v;
@@ -13,18 +13,18 @@ public class DirectedEdge {
         this.weight = weight;
     }
 
-    //±ßµÄÈ¨ÖØ
+    //è¾¹çš„æƒé‡
     public double weight() {
         return weight;
     }
 
-    //Ö¸³öÕâÌõ±ßµÄ¶¥µã
+    //æŒ‡å‡ºè¿™æ¡è¾¹çš„é¡¶ç‚¹
     public int from() {
         return v;
     }
 
 
-    //ÕâÌõ±ßÖ¸ÏòµÄ¶¥µã
+    //è¿™æ¡è¾¹æŒ‡å‘çš„é¡¶ç‚¹
     public int to() {
         return w;
     }

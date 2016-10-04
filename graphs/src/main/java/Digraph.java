@@ -1,11 +1,11 @@
-import com.huazhou.std.In;
+ï»¿import com.huazhou.std.In;
 import com.huazhou.utils.Bag;
 
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 
 /**
- * ÓĞÏòÍ¼Êı¾İ½á¹¹
+ * æœ‰å‘å›¾æ•°æ®ç»“æ„
  * Created by huazhou on 2015/12/14.
  */
 public class Digraph {

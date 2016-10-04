@@ -1,5 +1,5 @@
-/**
- * Ñ°ÕÒÂ·¾¶
+ï»¿/**
+ * å¯»æ‰¾è·¯å¾„
  * Created by huazhou on 2015/12/8.
  */
 public class Paths {
@@ -8,17 +8,17 @@ public class Paths {
 
     }
 
-    //ÔÚGÖĞÕÒ³öËùÓĞÆğµãÎªsµÄÂ·¾¶
+    //åœ¨Gä¸­æ‰¾å‡ºæ‰€æœ‰èµ·ç‚¹ä¸ºsçš„è·¯å¾„
     public void Paths(Graph G, int s){
 
     }
 
-    //ÊÇ·ñ´æÔÚ´Ósµ½vµÄÂ·¾¶
+    //æ˜¯å¦å­˜åœ¨ä»såˆ°vçš„è·¯å¾„
     public boolean hasPathTo(int v){
         return false;
     }
 
-    //sµ½vµÄÂ·¾¶£¬Èç¹û²»´æÔÚÔò·µ»Ønull
+    //såˆ°vçš„è·¯å¾„ï¼Œå¦‚æœä¸å­˜åœ¨åˆ™è¿”å›null
     public Iterable<Integer> pathTo(int v){
         return null;
     }

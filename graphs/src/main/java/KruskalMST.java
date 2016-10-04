@@ -1,11 +1,11 @@
-import com.huazhou.std.In;
+ï»¿import com.huazhou.std.In;
 import com.huazhou.std.StdOut;
 import com.huazhou.utils.MinPQ;
 import com.huazhou.utils.Queue;
 import com.huazhou.utils.UF;
 
 /**
- * ×îĞ¡Éú³ÉÊ÷µÄKruskalËã·¨
+ * æœ€å°ç”Ÿæˆæ ‘çš„Kruskalç®—æ³•
  * Created by huazhou on 2015/12/19.
  */
 public class KruskalMST {
@@ -17,15 +17,15 @@ public class KruskalMST {
 //        UF uf = new UF(G.V());
 //
 //        while (!pq.isEmpty() && mst.size() < G.V() - 1) {
-//            Edge e = pq.delMin();//´ÓpqµÃµ½È¨ÖØ×îĞ¡µÄ±ßºÍËüµÄ¶¥µã
+//            Edge e = pq.delMin();//ä»pqå¾—åˆ°æƒé‡æœ€å°çš„è¾¹å’Œå®ƒçš„é¡¶ç‚¹
 //            int v = e.either();
 //            int w = e.other(v);
-//            //ºöÂÔÊ§Ğ§µÄ±ß
+//            //å¿½ç•¥å¤±æ•ˆçš„è¾¹
 //            if (uf.connected(v, w)) {
 //                continue;
 //            }
-//            uf.union(v, w);  //ºÏ²¢·ÖÁ¿
-//            mst.enqueue(e);  //½«±ßÌí¼Óµ½×îĞ¡Éú³ÉÊ÷ÖĞ
+//            uf.union(v, w);  //åˆå¹¶åˆ†é‡
+//            mst.enqueue(e);  //å°†è¾¹æ·»åŠ åˆ°æœ€å°ç”Ÿæˆæ ‘ä¸­
 //        }
 //    }
 
